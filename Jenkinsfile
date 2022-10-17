@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "git pull"
+                sh "git pull origin master"
                 echo 'Build..'
             }
         }
         stage('Test') {
             steps {
-                sh "composer install"
+                sh "/usr/local/bin/composer update -n"
                 echo 'Testing..'
             }
         }
