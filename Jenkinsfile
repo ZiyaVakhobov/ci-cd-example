@@ -4,11 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                git pull
+                echo 'Build..'
             }
         }
         stage('Test') {
             steps {
+                composer install
                 echo 'Testing..'
             }
         }
